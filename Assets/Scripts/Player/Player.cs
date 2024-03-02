@@ -6,7 +6,10 @@ public class Player : MonoBehaviour
 {
     public bool isTouchTop, isTouchBottom, isTouchRight, isTouchLeft;
     public Animator anim;
+    public bool readyCast = true;
     GameManager GM;
+
+    public GameObject fireBall;
 
     void Awake()
     {
@@ -88,5 +91,10 @@ public class Player : MonoBehaviour
 
     public void AttackEndEvent(){
         anim.SetInteger("AttackFlag", 0);
+        readyCast = true;
+        //임시 파이어볼 발사 로직
+        GameObject _fireBall = Instantiate(fireBall, transform.position, transform.rotation);
+        Rigidbody2D rigid = _fireBall.GetComponent<Rigidbody2D>();
+        rigid.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
     }
 }

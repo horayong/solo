@@ -27,7 +27,6 @@ public class Command : MonoBehaviour
     float resetTime = 1f; // 초기화 주기
     int count = 0;
 
-    public GameObject fireBall;
 
     Magic[] sampleMagics = new Magic[]
     {
@@ -43,7 +42,7 @@ public class Command : MonoBehaviour
 
     void Update()
     {
-        if (count != GM.playerData.maxCommand && Time.deltaTime != 0)
+        if (count != GM.playerData.maxCommand && GM.player.readyCast == true && Time.deltaTime != 0)
         {
             // 방향키 입력 처리
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -112,11 +111,8 @@ public class Command : MonoBehaviour
             {   
                 // 여기에 마법을 발동하는 등의 처리 추가 가능
                 GM.player.anim.SetInteger("AttackFlag", magic.index);
-                //임시 파이어볼 발사 로직
-                GameObject _fireBall = Instantiate(fireBall, transform.position, transform.rotation);
-                Rigidbody2D rigid = _fireBall.GetComponent<Rigidbody2D>();
-                rigid.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
-
+                GM.player.readyCast = false;
+            
                 Debug.Log("Magic " + magic.name + " activated! Power: " + magic.power);
             }
         }

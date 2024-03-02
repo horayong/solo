@@ -1796,6 +1796,7 @@ MonoBehaviour:
   isTouchRight: 0
   isTouchLeft: 0
   anim: {fileID: 0}
+  fireBall: {fileID: 5533777659982198476, guid: a3c60120c6f768543885865f1642445c, type: 3}
 --- !u!61 &1679841111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1915,7 +1916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef572384d8eac894cb7e6c982eb6ed34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBall: {fileID: 5533777659982198476, guid: a3c60120c6f768543885865f1642445c, type: 3}
 --- !u!1 &1708083961
 GameObject:
   m_ObjectHideFlags: 0
