@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public PlayerData playerData;
     public Command command;
     public CommandUI commandUI;
+  
     private void Awake()
     {
         // 싱글톤 적용
