@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Border
   - BorderSpell
+  - Enemy
   layers:
   - Default
   - TransparentFX

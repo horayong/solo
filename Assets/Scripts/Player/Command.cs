@@ -88,16 +88,6 @@ public class Command : MonoBehaviour
             timer = resetTime;
         }
 
-        // 큐에 저장된 입력 정보 확인 (테스트용)
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Stored Directions:");
-            foreach (string dir in directionQueue)
-            {
-                Debug.Log(dir);
-            }
-        }
-
     }
     void CompareCommand()
     {

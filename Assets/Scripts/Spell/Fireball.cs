@@ -13,17 +13,17 @@ public class Fireball : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-            anim.SetBool("HitFlag", true);
-    }
+
     public void HitEvent(){
         anim.SetBool("HitFlag", false);
+        Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.tag == "BorderSpell"){
             Destroy(gameObject);
+        }
+        if(collision.gameObject.tag == "Enemy"){
+            anim.SetBool("HitFlag", true);
         }
     }
 }
